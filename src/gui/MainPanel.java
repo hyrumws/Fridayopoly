@@ -28,6 +28,11 @@ public class MainPanel extends JPanel {
 		mainBoard.setPreferredSize(new Dimension(1300, 1300));
 		add(mainBoard, BorderLayout.CENTER);
 		
+		//TODO fix asap
+		System.out.println("X: " + mainBoard.getX() + "Y: " + mainBoard.getY());
+		
+		
+		
 		JPanel southPanel = southPanel();
 		add(southPanel, BorderLayout.SOUTH);
 		

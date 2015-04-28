@@ -52,6 +52,11 @@ public class PlayGame extends JFrame {
 		panel.setPreferredSize(new Dimension(1600, 1600));
 		contentPane.add(panel, BorderLayout.NORTH);
 		
+		
+		//TODO fix asap
+		System.out.println("X: " + panel.getX() );
+		
+		
 		JScrollPane scrollBar = new JScrollPane(panel);
 		this.getContentPane().add(scrollBar, BorderLayout.EAST);
 		

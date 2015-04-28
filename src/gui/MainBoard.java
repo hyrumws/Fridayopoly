@@ -35,9 +35,14 @@ public class MainBoard extends JPanel {
 		lSide.setPreferredSize(sidePnls);
 		add(lSide);
 		
+		//TODO take out asap
+		System.out.println("X: " + lSide.getX() + "Y: " + lSide.getY());
+		
+		
 		JPanel middlePanel = new MiddleBoardPanel();
 		middlePanel.setPreferredSize(middle);
 		add(middlePanel);
+		
 		
 		JPanel rSide = new RightSide();
 		rSide.setPreferredSize(sidePnls);
