@@ -40,6 +40,7 @@ public class MainBoard extends JPanel {
 		
 		JPanel bottom = new BottomBoard();
 		bottom.setPreferredSize(topBottomPnls);
+		bottom.get
 		add(bottom);
 	}
 

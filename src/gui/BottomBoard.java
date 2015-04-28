@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.util.ArrayList;
 
 import background.PawnShops;
 import background.Properties;
@@ -22,6 +23,7 @@ import background.Properties;
 public class BottomBoard extends JPanel {
 	Dimension bottom = new Dimension(100, 200);
 	Dimension cornerPieces = new Dimension(202, 200);
+	ArrayList<JButton> properties;
 	
 	/**
 	 * Create the panel.
@@ -29,6 +31,7 @@ public class BottomBoard extends JPanel {
 	public BottomBoard() {
 		setBackground(Color.BLACK);
 		setBounds(0, 0, 1360, 205);
+		
 		
 		JButton corner1 = new JButton("");
 		corner1.setIcon(new ImageIcon(BottomBoard.class.getResource("/gui/Hiawatha.jpg")));
@@ -123,6 +126,13 @@ public class BottomBoard extends JPanel {
 		corner4.setIcon(new ImageIcon(BottomBoard.class.getResource("/gui/StartTheNewYear.png")));
 		corner4.setPreferredSize(cornerPieces);
 		add(corner4);
+		properties = getAllProperties();
+	}
+
+	private ArrayList<JButton> getAllProperties() {
+		ArrayList<JButton> propertyList = new ArrayList<JButton>();
+		propertyList.add(corner1);
+		return null;
 	}
 
 }
