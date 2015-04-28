@@ -8,6 +8,6 @@ public class Die {
 	static Random rand = new Random();
 	//methods
 	public static int rollDie(){
-		return rand.nextInt(6);
+		return rand.nextInt(6) + 1;
 	}
 }
