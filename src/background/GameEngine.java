@@ -6,7 +6,7 @@ import background.BoardPiece;
 
 public class GameEngine {
 	//fields
-	public static ArrayList<Player> players = new ArrayList<>();
+	public static ArrayList<Player> players = new ArrayList<Player>();
 	private int turn = 0;
 	private boolean isOver;
 	
@@ -16,8 +16,9 @@ public class GameEngine {
 	//methods
 	private void nextTurn(){
 		if (isOver) {
-			//set this as the main GUI frame
-			frame.setTile("Game Over!");
+			// set this as the main GUI frame
+			// TODO add the frame in
+			// frame.setTile("Game Over!");
 			
 		}
 		

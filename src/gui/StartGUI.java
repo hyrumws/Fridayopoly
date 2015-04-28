@@ -45,17 +45,17 @@ public class StartGUI extends JPanel {
 	public StartGUI() {
 		setBounds(0, 0, 600, 540);
 		
-		JPanel playerBtn4 = new JPanel();
+		final JPanel playerBtn4 = new JPanel();
 		
-		JPanel playerBtn3 = new JPanel();
+		final JPanel playerBtn3 = new JPanel();
 		
-		JPanel playerBtn2 = new JPanel();
+		final JPanel playerBtn2 = new JPanel();
 		
-		JPanel playerBtn5 = new JPanel();
+		final JPanel playerBtn5 = new JPanel();
 		
-		JPanel playerBtn6 = new JPanel();
+		final JPanel playerBtn6 = new JPanel();
 		
-		JPanel playerBtn1 = new JPanel();
+		final JPanel playerBtn1 = new JPanel();
 		
 		JButton playBtn = new JButton("Play");
 		playBtn.addActionListener(new ActionListener() {
@@ -108,7 +108,7 @@ public class StartGUI extends JPanel {
 		);
 
 //1111111111111111111111111111111111111111111111111111111111111111111111Button1		
-		CardLayout layout1 = new CardLayout(0, 0);
+		final CardLayout layout1 = new CardLayout(0, 0);
 		playerBtn1.setLayout(layout1);
 		
 		JButton btnAddPlayer1 = new JButton("Add Player 1");
@@ -127,7 +127,7 @@ public class StartGUI extends JPanel {
 		
 		
 //222222222222222222222222222222222222222222222222222222222222222222222button2	
-		CardLayout layout2 = new CardLayout(0, 0);
+		final CardLayout layout2 = new CardLayout(0, 0);
 		playerBtn2.setLayout(layout2);
 		
 		JButton btnAddPlayer2 = new JButton("Add Player 2");
@@ -146,7 +146,7 @@ public class StartGUI extends JPanel {
 		
 		
 //333333333333333333333333333333333333333333333333333333333333333333333button3	
-		CardLayout layout3 = new CardLayout(0, 0);
+		final CardLayout layout3 = new CardLayout(0, 0);
 		playerBtn3.setLayout(layout3);
 		JButton btnAddPlayer3 = new JButton("Add Player 3");
 		btnAddPlayer3.addActionListener(new ActionListener() {
@@ -164,7 +164,7 @@ public class StartGUI extends JPanel {
 		
 		
 //66666666666666666666666666666666666666666666666666666666666666666666button6
-		CardLayout layout6 = new CardLayout(0, 0);
+		final CardLayout layout6 = new CardLayout(0, 0);
 		playerBtn6.setLayout(layout6);
 		
 		JButton btnAddPlayer6 = new JButton("Add Player 6");
@@ -183,7 +183,7 @@ public class StartGUI extends JPanel {
 		
 
 //5555555555555555555555555555555555555555555555555555555555555555555555Button5	
-		CardLayout layout5 = new CardLayout(0, 0);
+		final CardLayout layout5 = new CardLayout(0, 0);
 		playerBtn5.setLayout(layout5);
 		//button
 		JButton btnAddPlayer5 = new JButton("Add Player 5");
@@ -202,7 +202,7 @@ public class StartGUI extends JPanel {
 		
 
 //44444444444444444444444444444444444444444444444444444444444444444444444444Button4	
-		CardLayout layout4 = new CardLayout(0, 0);
+		final CardLayout layout4 = new CardLayout(0, 0);
 		playerBtn4.setLayout(layout4);
 		JButton btnAddPlayer4 = new JButton("Add player 4");
 		btnAddPlayer4.addActionListener(new ActionListener() {
@@ -258,7 +258,7 @@ public class StartGUI extends JPanel {
 		
 	}
 	
-	private JPanel createNamePanel(JPanel p, CardLayout l, String nIP) {
+	private JPanel createNamePanel(final JPanel p, final CardLayout l, final String nIP) {
 		JPanel namePanel = new JPanel();
 		namePanel.setAlignmentX(CENTER_ALIGNMENT);
 		namePanel.setAlignmentY(CENTER_ALIGNMENT);
@@ -268,7 +268,7 @@ public class StartGUI extends JPanel {
 		lblEnterName.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		namePanel.add(lblEnterName);
 		
-		JTextField txtName = new JTextField();
+		final JTextField txtName = new JTextField();
 		txtName.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		txtName.setToolTipText("");
 		txtName.addActionListener(new ActionListener() {
@@ -282,7 +282,7 @@ public class StartGUI extends JPanel {
 		return namePanel;
 	}
 	
-	private JPanel createVerticalIconPanel(JPanel p, CardLayout l, int pos) {
+	private JPanel createVerticalIconPanel(final JPanel p, final CardLayout l, final int pos) {
 		JPanel verticalIconPanel = new JPanel();
 		verticalIconPanel.setLayout(new GridLayout(4, 2, 0, 0));
 		
@@ -295,7 +295,7 @@ public class StartGUI extends JPanel {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		verticalIconPanel.add(lblNewLabel_1);
 		
-		JButton icon1 = new JButton("");
+		final JButton icon1 = new JButton("");
 		icon1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon1.getIcon());
@@ -313,7 +313,7 @@ public class StartGUI extends JPanel {
 		icon1.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/Horse.jpg")));
 		verticalIconPanel.add(icon1);
 		
-		JButton icon2 = new JButton("");
+		final JButton icon2 = new JButton("");
 		icon2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon2.getIcon());
@@ -331,7 +331,7 @@ public class StartGUI extends JPanel {
 		icon2.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/crown.jpg")));
 		verticalIconPanel.add(icon2);
 		
-		JButton icon3 = new JButton("");
+		final JButton icon3 = new JButton("");
 		icon3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon3.getIcon());
@@ -349,7 +349,7 @@ public class StartGUI extends JPanel {
 		icon3.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/horn.jpg")));
 		verticalIconPanel.add(icon3);
 		
-		JButton icon4 = new JButton("");
+		final JButton icon4 = new JButton("");
 		icon4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon4.getIcon());
@@ -367,7 +367,7 @@ public class StartGUI extends JPanel {
 		icon4.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/leaf.jpg")));
 		verticalIconPanel.add(icon4);
 		
-		JButton icon5 = new JButton("");
+		final JButton icon5 = new JButton("");
 		icon5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon5.getIcon());
@@ -385,7 +385,7 @@ public class StartGUI extends JPanel {
 		icon5.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/sword.jpg")));
 		verticalIconPanel.add(icon5);
 		
-		JButton icon6 = new JButton("");
+		final JButton icon6 = new JButton("");
 		icon6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon6.getIcon());
@@ -418,7 +418,7 @@ public class StartGUI extends JPanel {
 		return verticalIconPanel;
 	}
 
-	private JPanel createHorizontalIconPanel(JPanel p, CardLayout l, int pos) {
+	private JPanel createHorizontalIconPanel(final JPanel p, final CardLayout l, final int pos) {
 		JPanel verticalIconPanel = new JPanel();
 		verticalIconPanel.setLayout(new GridLayout(2, 4, 0, 0));
 		
@@ -431,7 +431,7 @@ public class StartGUI extends JPanel {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		verticalIconPanel.add(lblNewLabel_1);
 		
-		JButton icon1 = new JButton("");
+		final JButton icon1 = new JButton("");
 		icon1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon1.getIcon());
@@ -449,7 +449,7 @@ public class StartGUI extends JPanel {
 		icon1.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/Horse.jpg")));
 		verticalIconPanel.add(icon1);
 		
-		JButton icon2 = new JButton("");
+		final JButton icon2 = new JButton("");
 		icon2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon2.getIcon());
@@ -467,7 +467,7 @@ public class StartGUI extends JPanel {
 		icon2.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/crown.jpg")));
 		verticalIconPanel.add(icon2);
 		
-		JButton icon3 = new JButton("");
+		final JButton icon3 = new JButton("");
 		icon3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon3.getIcon());
@@ -485,7 +485,7 @@ public class StartGUI extends JPanel {
 		icon3.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/horn.jpg")));
 		verticalIconPanel.add(icon3);
 		
-		JButton icon4 = new JButton("");
+		final JButton icon4 = new JButton("");
 		icon4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon4.getIcon());
@@ -503,7 +503,7 @@ public class StartGUI extends JPanel {
 		icon4.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/leaf.jpg")));
 		verticalIconPanel.add(icon4);
 		
-		JButton icon5 = new JButton("");
+		final JButton icon5 = new JButton("");
 		icon5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon5.getIcon());
@@ -521,7 +521,7 @@ public class StartGUI extends JPanel {
 		icon5.setIcon(new ImageIcon(StartGUI.class.getResource("/gui/sword.jpg")));
 		verticalIconPanel.add(icon5);
 		
-		JButton icon6 = new JButton("");
+		final JButton icon6 = new JButton("");
 		icon6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bp = new BoardPiece(icon6.getIcon());
