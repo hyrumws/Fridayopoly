@@ -7,18 +7,21 @@
 package gui;
 
 import java.awt.Dimension;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class MainBoard extends JPanel {
 	Dimension sidePnls = new Dimension(200, 950);
 	Dimension topBottomPnls = new Dimension(1360, 205);
-	Dimension middle = new Dimension(950, 950);
-	
+	Dimension middle = new Dimension(950, 950); 
 	/**
 	 * Create the panel.
 	 */
-	public MainBoard() {
+	public MainBoard(ArrayList<JLabel> playerLbls1) {
 		setBackground(Color.BLACK);
 		setBounds(0, 0, 1375, 1375);
 		
@@ -30,8 +33,9 @@ public class MainBoard extends JPanel {
 		lSide.setPreferredSize(sidePnls);
 		add(lSide);
 		
-		JPanel middlePanel = new MiddleBoardPanel();
+		JPanel middlePanel = new MiddleBoardPanel(playerLbls1);
 		middlePanel.setPreferredSize(middle);
+		
 		add(middlePanel);
 		
 		JPanel rSide = new RightSide();

@@ -8,13 +8,29 @@ import java.awt.Dimension;
 import javax.swing.JLabel;
 
 import java.awt.GridLayout;
+import java.util.ArrayList;
 
 public class MainPanel extends JPanel {
+	private JLabel player6Lbl;
+	private JLabel player2Lbl;
+	private JLabel player1Lbl;
+	private JLabel player3Lbl;
+	private JLabel player4Lbl;
+	private JLabel player5Lbl;
+	ArrayList<JLabel> playersLbls = new ArrayList<JLabel>();
 
 	/**
 	 * Create the panel.
 	 */
 	public MainPanel() {
+		playersLbls.add(player1Lbl);
+		playersLbls.add(player2Lbl);
+		playersLbls.add(player3Lbl);
+		playersLbls.add(player4Lbl);
+		playersLbls.add(player5Lbl);
+		playersLbls.add(player6Lbl);
+
+		
 		setBounds(0, 0, 1610, 1983);
 		setLayout(new BorderLayout(0, 0));
 		
@@ -24,8 +40,9 @@ public class MainPanel extends JPanel {
 		JPanel panel_1 = westPanel();
 		add(panel_1, BorderLayout.WEST);
 		
-		JPanel mainBoard = new MainBoard();
+		JPanel mainBoard = new MainBoard(playersLbls);
 		mainBoard.setPreferredSize(new Dimension(1300, 1300));
+		
 		add(mainBoard, BorderLayout.CENTER);
 		
 		JPanel southPanel = southPanel();
@@ -40,7 +57,7 @@ public class MainPanel extends JPanel {
 		eastPanel.setLayout(new GridLayout(0, 1, 0, 0));
 		eastPanel.setPreferredSize(new Dimension(110, 1500));
 		
-		JLabel player6Lbl = new JLabel("player6");
+		player6Lbl = new JLabel("player6");
 		eastPanel.add(player6Lbl);
 		return eastPanel;
 	}
@@ -50,10 +67,10 @@ public class MainPanel extends JPanel {
 		southPanel.setLayout(new GridLayout(0, 2, 0, 0));
 		southPanel.setPreferredSize(new Dimension(1500, 110));
 		
-		JLabel player2Lbl = new JLabel("player2");
+		player2Lbl = new JLabel("player2");
 		southPanel.add(player2Lbl);
 		
-		JLabel player1Lbl = new JLabel("player1");
+		player1Lbl = new JLabel("player1");
 		southPanel.add(player1Lbl);
 		return southPanel;
 	}
@@ -62,7 +79,7 @@ public class MainPanel extends JPanel {
 		JPanel westPanel = new JPanel();
 		westPanel.setLayout(new GridLayout(0, 1, 0, 0));
 		westPanel.setPreferredSize(new Dimension(110, 1500));
-		JLabel player3Lbl = new JLabel("player3");
+		player3Lbl = new JLabel("player3");
 		westPanel.add(player3Lbl);
 		return westPanel;
 	}
@@ -72,12 +89,17 @@ public class MainPanel extends JPanel {
 		northPanel.setLayout(new GridLayout(0, 2, 0, 0));
 		northPanel.setPreferredSize(new Dimension(1500, 110));
 		
-		JLabel player4Lbl = new JLabel("player4");
+		player4Lbl = new JLabel("player4");
 		northPanel.add(player4Lbl);
 		
-		JLabel player5Lbl = new JLabel("player5");
+		player5Lbl = new JLabel("player5");
 		northPanel.add(player5Lbl);
 		return northPanel;
+	}
+	public ArrayList<JLabel> getPlayerLbls()
+	{
+		return playersLbls;
+
 	}
 
 }
