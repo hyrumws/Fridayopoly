@@ -1,0 +1,14 @@
+package gui;
+
+public enum TileType {
+	PROPERTY,
+	CHANCE,
+	COMMUNITYCHEST,
+	UTILITY,
+	HIAWATHA,
+	TOHIAWATHA,
+	PAWNSHOPS,
+	NEWYEAR,
+	FEE,
+	TAXRETURN;
+}
