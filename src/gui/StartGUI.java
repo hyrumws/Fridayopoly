@@ -58,14 +58,6 @@ public class StartGUI extends JPanel {
 		final JPanel playerBtn1 = new JPanel();
 		
 		JButton playBtn = new JButton("Play");
-		playBtn.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				JPanel mainboar = new MainBoard();
-				mainboar.setPreferredSize(new Dimension(1600, 1600));
-				PlayGame.swapPanels();
-			}
-		});
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)

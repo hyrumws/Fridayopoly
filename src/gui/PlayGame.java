@@ -12,10 +12,7 @@ import javax.swing.JScrollBar;
 
 public class PlayGame extends JFrame {
 
-	
-	private static JPanel contentPane;
-	private static JPanel panel;
-	private static JPanel mainBoard;
+	private JPanel contentPane;
 	/**
 	 * Launch the application.
 	 */
@@ -44,22 +41,12 @@ public class PlayGame extends JFrame {
 		setContentPane(contentPane);
 
 		
-		panel = new StartGUI();
+		JPanel panel = new MainPanel();
 		panel.setPreferredSize(new Dimension(1600, 1600));
 		contentPane.add(panel, BorderLayout.NORTH);
 		
 		JScrollPane scrollBar = new JScrollPane(panel);
 		this.getContentPane().add(scrollBar, BorderLayout.EAST);
-	}
-	
-	public static void swapPanels(){
-		contentPane.remove(panel);
-		mainBoard = new MainBoard();
-		mainBoard.setPreferredSize(new Dimension(1600, 1600));
-		mainBoard.add(panel, BorderLayout.NORTH);
-		
-		contentPane.revalidate();
-		contentPane.repaint();
 	}
 
 }

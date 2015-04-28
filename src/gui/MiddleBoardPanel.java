@@ -31,6 +31,7 @@ public class MiddleBoardPanel extends JPanel {
 	private static JPanel propertyCntrl;
 
 	static JPanel ads = new PropertyPanel(Properties.ADS);
+	private JButton chanceCard;
 	/**
 	 * Create the panel.
 	 */
@@ -54,19 +55,42 @@ public class MiddleBoardPanel extends JPanel {
 		cards.setLayout(new GridLayout(0, 4, 0, 0));
 		
 		JButton chance = new JButton("Chance");
+		chance.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ChancePanel cp = new ChancePanel();
+				chanceCard.setText(" " + cp.randomChanceGenerator().getDescription());
+			}
+		});
+		chance.setBackground(new Color(255, 140, 0));
 		
 		cards.add(chance);
 		
-		JButton chanceCard = new JButton("");
+		chanceCard = new JButton("");
+		chanceCard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		chanceCard.setBackground(Color.WHITE);
 		cards.add(chanceCard);
 		
-		JButton communityChance = new JButton("Community Chance");
-		cards.add(communityChance);
+		JButton communityChest = new JButton("Community Chest");
+		communityChest.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		communityChest.setBackground(new Color(30, 144, 255));
+		cards.add(communityChest);
 		
-		JButton communityChanceCard = new JButton("");
-		communityChanceCard.setBackground(Color.WHITE);
-		cards.add(communityChanceCard);
+		JButton communityChestCard = new JButton("");
+		communityChestCard.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		communityChestCard.setBackground(Color.WHITE);
+		cards.add(communityChestCard);
 		return cards;
 	}
 
@@ -78,7 +102,9 @@ public class MiddleBoardPanel extends JPanel {
 		rollBtn.setFont(new Font("Tahoma", Font.BOLD, 52));
 		rollBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int num = Die.rollDie() + Die.rollDie();
+				int die1 = Die.rollDie();
+				int die2 = Die.rollDie();
+				int num = die1 + die2;
 				diceNumber.setText("" + num);
 			}
 		});
