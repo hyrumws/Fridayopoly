@@ -7,17 +7,23 @@
 package gui;
 
 import java.awt.Dimension;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import java.awt.Color;
 import java.util.ArrayList;
+import javax.swing.*;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Map;
 
 public class MainBoard extends JPanel {
 	Dimension sidePnls = new Dimension(200, 950);
-	Dimension topBottomPnls = new Dimension(1360, 205);
-	Dimension middle = new Dimension(950, 950); 
+	Dimension topBottomPnls = new Dimension(1360, 205); 
+	Dimension middle = new Dimension(950, 950);
+	ArrayList<JButton> topBoardButtons, leftButtons, rightButtons,
+			bottomBoardButtons;
+	Map<Integer,JButton> orderedButtons;
+
 	/**
 	 * Create the panel.
 	 */
@@ -42,9 +48,19 @@ public class MainBoard extends JPanel {
 		rSide.setPreferredSize(sidePnls);
 		add(rSide);
 		
-		JPanel bottom = new BottomBoard();
+		BottomBoard bottom = new BottomBoard();
 		bottom.setPreferredSize(topBottomPnls);
+		bottomBoardButtons = bottom.getAllProperties();
 		add(bottom);
+
+		orderedButtons = this.getOrderedListOfButtons();
+	}
+
+	private Map<Integer, JButton> getOrderedListOfButtons() {
+
+
+
+		return null;
 	}
 
 }

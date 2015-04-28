@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import background.PawnShops;
 import background.Properties;
@@ -23,6 +24,8 @@ import background.Utilities;
 public class TopBoard extends JPanel {
 	Dimension top = new Dimension(100, 200);
 	Dimension cornerPieces = new Dimension(202, 200);
+	private JButton corner2, corner3, topBtn1, topBtn2, topBtn3, topBtn4, topBtn5, 
+			topBtn6, topBtn7, topBtn8, topBtn9;
 
 	/**
 	 * Create the panel.
@@ -31,12 +34,12 @@ public class TopBoard extends JPanel {
 		setBackground(Color.BLACK);
 		setBounds(0, 0, 1360, 205);
 				
-		JButton corner2 = new JButton("");
+		corner2 = new JButton("");
 		corner2.setIcon(new ImageIcon(TopBoard.class.getResource("/gui/freeParking.jpg")));
 		corner2.setPreferredSize(cornerPieces);
 		add(corner2);
 		
-		JButton topBtn1 = new JButton();
+		topBtn1 = new JButton();
 		topBtn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel wilson = new PropertyPanel(Properties.WILSON_AVENUE);
@@ -47,12 +50,12 @@ public class TopBoard extends JPanel {
 		topBtn1.setPreferredSize(top);
 		add(topBtn1);
 		
-		JButton topBtn2 = new JButton();
+		topBtn2 = new JButton();
 		topBtn2.setIcon(new ImageIcon(TopBoard.class.getResource("/gui/Chance(Top).png")));
 		topBtn2.setPreferredSize(top);
 		add(topBtn2);
 		
-		JButton topBtn3 = new JButton();
+		topBtn3 = new JButton();
 		topBtn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel beaver = new PropertyPanel(Properties.BEAVER_CIRCLE);
@@ -63,7 +66,7 @@ public class TopBoard extends JPanel {
 		topBtn3.setPreferredSize(top);
 		add(topBtn3);
 		
-		JButton topBtn4 = new JButton();
+		topBtn4 = new JButton();
 		topBtn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel emery = new PropertyPanel(Properties.EMERY_APPARTMENTS);
@@ -74,7 +77,7 @@ public class TopBoard extends JPanel {
 		topBtn4.setPreferredSize(top);
 		add(topBtn4);
 		
-		JButton topBtn5 = new JButton();
+		topBtn5 = new JButton();
 		topBtn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel sportsmans = new PropertyPanel(PawnShops.LEHI_PAWNING);
@@ -86,7 +89,7 @@ public class TopBoard extends JPanel {
 		topBtn5.setPreferredSize(top);
 		add(topBtn5);
 		
-		JButton topBtn6 = new JButton();
+		topBtn6 = new JButton();
 		topBtn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel brainSpin = new PropertyPanel(Properties.BRAIN_SPIN);
@@ -97,7 +100,7 @@ public class TopBoard extends JPanel {
 		topBtn6.setPreferredSize(top);
 		add(topBtn6);
 		
-		JButton topBtn7 = new JButton();
+		topBtn7 = new JButton();
 		topBtn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel arrow = new PropertyPanel(Properties.ARROW_REALESTATE);
@@ -108,7 +111,7 @@ public class TopBoard extends JPanel {
 		topBtn7.setPreferredSize(top);
 		add(topBtn7);
 		
-		JButton topBtn8 = new JButton();
+		topBtn8 = new JButton();
 		topBtn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel utilities = new PropertyPanel(Utilities.A1_DISSPOSAL);
@@ -120,7 +123,7 @@ public class TopBoard extends JPanel {
 		topBtn8.setPreferredSize(top);
 		add(topBtn8);
 		
-		JButton topBtn9 = new JButton();
+		topBtn9 = new JButton();
 		topBtn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel ads = new PropertyPanel(Properties.ADS);
@@ -131,10 +134,27 @@ public class TopBoard extends JPanel {
 		topBtn9.setPreferredSize(top);
 		add(topBtn9);
 		
-		JButton corner3 = new JButton("");
+		corner3 = new JButton("");
 		corner3.setIcon(new ImageIcon(TopBoard.class.getResource("/gui/goToHiawatha.jpg")));
 		corner3.setPreferredSize(cornerPieces);
 		add(corner3);
 	}
+	
+	public ArrayList<JButton> getAllProperties() {
+		ArrayList<JButton> propertyList = new ArrayList<JButton>();
 
+		propertyList.add(corner2);
+		propertyList.add(topBtn1);
+		propertyList.add(topBtn2);
+		propertyList.add(topBtn3);
+		propertyList.add(topBtn4);
+		propertyList.add(topBtn5);
+		propertyList.add(topBtn6);
+		propertyList.add(topBtn7);
+		propertyList.add(topBtn8);
+		propertyList.add(topBtn9);
+		propertyList.add(corner3);
+
+		return propertyList;
+	}
 }

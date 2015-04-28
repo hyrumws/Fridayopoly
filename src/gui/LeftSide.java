@@ -24,12 +24,15 @@ import java.awt.event.ActionEvent;
 
 
 
+import java.util.ArrayList;
+
 import background.PawnShops;
 import background.Properties;
 import background.Utilities;
 
 public class LeftSide extends JPanel {
 	Dimension leftSide = new Dimension(200, 100);
+	JButton leftBtn1, leftBtn2, leftBtn3, leftBtn4, leftBtn5, leftBtn6, leftBtn7, leftBtn8, leftBtn9;
 	
 	/**
 	 * Create the panel.
@@ -38,7 +41,7 @@ public class LeftSide extends JPanel {
 		setBackground(Color.BLACK);
 		setBounds(0, 0, 200, 950);
 		
-		JButton leftBtn1 = new JButton("");
+		leftBtn1 = new JButton("");
 		leftBtn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel jenkins = new PropertyPanel(Properties.JENKINS_LANE);
@@ -50,7 +53,7 @@ public class LeftSide extends JPanel {
 		leftBtn1.setPreferredSize(leftSide);
 		add(leftBtn1);
 		
-		JButton	leftBtn2 = new JButton("");
+		leftBtn2 = new JButton("");
 		leftBtn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel darrens = new PropertyPanel(Properties.DARRENS_HOUSE);
@@ -62,12 +65,12 @@ public class LeftSide extends JPanel {
 		leftBtn2.setPreferredSize(leftSide);
 		add(leftBtn2);
 		
-		JButton leftBtn3 = new JButton("");
+		leftBtn3 = new JButton("");
 		leftBtn3.setIcon(new ImageIcon(LeftSide.class.getResource("/gui/CommunityChance(LeftSide).png")));
 		leftBtn3.setPreferredSize(leftSide);
 		add(leftBtn3);
 		
-		JButton	leftBtn4 = new JButton("");
+		leftBtn4 = new JButton("");
 		leftBtn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel damon = new PropertyPanel(Properties.DAMON_PALMER);
@@ -78,7 +81,7 @@ public class LeftSide extends JPanel {
 		leftBtn4.setPreferredSize(leftSide);
 		add(leftBtn4);
 		
-		JButton leftBtn5 = new JButton("");
+		leftBtn5 = new JButton("");
 		leftBtn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel sportsmans = new PropertyPanel(PawnShops.EXTREME_PAWN);
@@ -90,7 +93,7 @@ public class LeftSide extends JPanel {
 		leftBtn5.setPreferredSize(leftSide);
 		add(leftBtn5);
 		
-		JButton	leftBtn6 = new JButton("");
+		leftBtn6 = new JButton("");
 		leftBtn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel valley = new PropertyPanel(Properties.VALLEY_COAL);
@@ -102,7 +105,7 @@ public class LeftSide extends JPanel {
 		leftBtn6.setPreferredSize(leftSide);
 		add(leftBtn6);
 		
-		JButton leftBtn7 = new JButton("");
+		leftBtn7 = new JButton("");
 		leftBtn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel angelo = new PropertyPanel(Properties.ANGELO_OFFICE);
@@ -114,7 +117,7 @@ public class LeftSide extends JPanel {
 		leftBtn7.setPreferredSize(leftSide);
 		add(leftBtn7);
 		
-		JButton	leftBtn8 = new JButton();
+		leftBtn8 = new JButton();
 		leftBtn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel utilities = new PropertyPanel(Utilities.OBRIENS_PROPERTY_MAINTENENCE);
@@ -126,7 +129,7 @@ public class LeftSide extends JPanel {
 		leftBtn8.setPreferredSize(leftSide);
 		add(leftBtn8);
 		
-		JButton	leftBtn9 = new JButton("");
+		leftBtn9 = new JButton("");
 		leftBtn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JPanel century= new PropertyPanel(Properties.CENTURY_OFFICE);
@@ -138,5 +141,22 @@ public class LeftSide extends JPanel {
 		leftBtn9.setPreferredSize(leftSide);
 		add(leftBtn9);
 	}
+	
+	public ArrayList<JButton> getAllProperties() {
+		ArrayList<JButton> propertyList = new ArrayList<JButton>();
+
+		propertyList.add(leftBtn1);
+		propertyList.add(leftBtn2);
+		propertyList.add(leftBtn3);
+		propertyList.add(leftBtn4);
+		propertyList.add(leftBtn5);
+		propertyList.add(leftBtn6);
+		propertyList.add(leftBtn7);
+		propertyList.add(leftBtn8);
+		propertyList.add(leftBtn9);
+
+		return propertyList;
+	}
+
 
 }
