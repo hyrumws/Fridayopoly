@@ -14,6 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollBar;
+import java.awt.CardLayout;
 
 
 public class PlayGame extends JFrame {
@@ -47,17 +48,22 @@ public class PlayGame extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 
-		
-		JPanel panel = new MainPanel();
-		panel.setPreferredSize(new Dimension(1600, 1600));
-		contentPane.add(panel, BorderLayout.NORTH);
+		final CardLayout cdlt = new CardLayout(0, 0);
 		
 		
-		//TODO fix asap
-		System.out.println("X: " + panel.getX() );
+		JPanel panelHolder = new JPanel();
+		panelHolder.setPreferredSize(new Dimension(1600, 1600));
+		contentPane.add(panelHolder, BorderLayout.NORTH);
 		
 		
-		JScrollPane scrollBar = new JScrollPane(panel);
+		JScrollPane scrollBar = new JScrollPane(panelHolder);
+		panelHolder.setLayout(cdlt);
+		
+		StartGUI startPanel = new StartGUI(cdlt, panelHolder, "name_338700127015144");
+		panelHolder.add(startPanel, "name_338647891697376");
+		
+		MainPanel boardPanel = new MainPanel();
+		panelHolder.add(boardPanel, "name_338700127015144");
 		this.getContentPane().add(scrollBar, BorderLayout.EAST);
 		
 		

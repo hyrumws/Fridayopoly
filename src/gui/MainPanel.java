@@ -10,13 +10,16 @@ import javax.swing.JLabel;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 
+import background.GameEngine;
+import background.Player;
+
 public class MainPanel extends JPanel {
-	private JLabel player6Lbl;
-	private JLabel player2Lbl;
-	private JLabel player1Lbl;
-	private JLabel player3Lbl;
-	private JLabel player4Lbl;
-	private JLabel player5Lbl;
+	private static JLabel player6Lbl;
+	private static JLabel player2Lbl;
+	private static JLabel player1Lbl;
+	private static JLabel player3Lbl;
+	private static JLabel player4Lbl;
+	private static JLabel player5Lbl;
 	ArrayList<JLabel> playersLbls = new ArrayList<JLabel>();
 
 	/**
@@ -55,6 +58,35 @@ public class MainPanel extends JPanel {
 		
 		JPanel eastPanel = eastPanel();
 		add(eastPanel, BorderLayout.EAST);
+		
+		System.out.println(GameEngine.players);
+		writeUpLables();
+		revalidate();
+	}
+
+	public static void writeUpLables() {
+		for(Player e : GameEngine.players){
+			System.out.println(e.getPosition());
+			if(e.getPosition() == 1){
+				player1Lbl.setText(e.getName() + "        $" + e.getMoney());
+				player1Lbl.setIcon(e.getBoardPiece().getCharacter());
+			}else if(e.getPosition() == 2){
+				player2Lbl.setText(e.getName() + "        $" + e.getMoney());
+				player2Lbl.setIcon(e.getBoardPiece().getCharacter());
+			}else if(e.getPosition() == 3){
+				player3Lbl.setText(e.getName() + "        $" + e.getMoney());
+				player3Lbl.setIcon(e.getBoardPiece().getCharacter());
+			}else if(e.getPosition() == 4){
+				player4Lbl.setText(e.getName() + "        $" + e.getMoney());
+				player4Lbl.setIcon(e.getBoardPiece().getCharacter());
+			}else if(e.getPosition() == 5){
+				player5Lbl.setText(e.getName() + "        $" + e.getMoney());
+				player5Lbl.setIcon(e.getBoardPiece().getCharacter());
+			}else if(e.getPosition() == 6){
+				player6Lbl.setText(e.getName() + "        $" + e.getMoney());
+				player6Lbl.setIcon(e.getBoardPiece().getCharacter());
+			}
+		}
 	}
 
 	private JPanel eastPanel() {
@@ -62,7 +94,8 @@ public class MainPanel extends JPanel {
 		eastPanel.setLayout(new GridLayout(0, 1, 0, 0));
 		eastPanel.setPreferredSize(new Dimension(110, 1500));
 		
-		player6Lbl = new JLabel("player6");
+		player6Lbl = new JLabel("");
+		player6Lbl.setText("playerrerere6");
 		eastPanel.add(player6Lbl);
 		return eastPanel;
 	}
@@ -106,5 +139,6 @@ public class MainPanel extends JPanel {
 		return playersLbls;
 
 	}
+	
 
 }

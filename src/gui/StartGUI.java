@@ -42,7 +42,7 @@ public class StartGUI extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public StartGUI() {
+	public StartGUI(CardLayout layoutPanel, JPanel c, String nextPanel) {
 		setBounds(0, 0, 600, 540);
 		
 		final JPanel playerBtn4 = new JPanel();
@@ -58,6 +58,12 @@ public class StartGUI extends JPanel {
 		final JPanel playerBtn1 = new JPanel();
 		
 		JButton playBtn = new JButton("Play");
+		playBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainPanel.writeUpLables();
+				layoutPanel.show(c, nextPanel);
+			}
+		});
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -272,6 +278,10 @@ public class StartGUI extends JPanel {
 		namePanel.add(txtName);
 		txtName.setColumns(10);
 		return namePanel;
+	}
+	
+	public static void sendPanelInfo(){
+		
 	}
 	
 	private JPanel createVerticalIconPanel(final JPanel p, final CardLayout l, final int pos) {

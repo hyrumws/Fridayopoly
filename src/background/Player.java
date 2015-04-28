@@ -9,6 +9,7 @@ public class Player {
 	private BoardPiece boardPiece;
 	private int boardPosition;
 	private int orderNum;
+	private int position;
 	
 	public int getOrderNum() {
 		return orderNum;
@@ -58,8 +59,12 @@ public class Player {
 	
 	//when you can get to this
 	public void setPosition(int pos){
-		//[//set position based on the about of properties
-		//position = pos;
+		//set position based on the about of properties
+		position = pos;
+	}
+	
+	public int getPosition(){
+		return position;
 	}
 	
 	public void repaintPiece(){
