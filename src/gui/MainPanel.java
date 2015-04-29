@@ -59,14 +59,10 @@ public class MainPanel extends JPanel {
 		JPanel eastPanel = eastPanel();
 		add(eastPanel, BorderLayout.EAST);
 		
-		System.out.println(GameEngine.players);
-		writeUpLables();
-		revalidate();
 	}
 
 	public static void writeUpLables() {
 		for(Player e : GameEngine.players){
-			System.out.println(e.getPosition());
 			if(e.getPosition() == 1){
 				player1Lbl.setText(e.getName() + "        $" + e.getMoney());
 				player1Lbl.setIcon(e.getBoardPiece().getCharacter());
